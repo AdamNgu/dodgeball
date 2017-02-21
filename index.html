@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
   </head>
   <body>
-    <canvas id="game-canvas"></canvas>
+    <div class="layout">
+      <div class="name">
+        Dodgeball
+      </div>
+      <canvas id="game-canvas"></canvas>
+      <div class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        ornare nunc ut tincidunt vulputate. Nulla quis congue massa. Suspendisse
+        et iaculis sem. Aliquam feugiat mi in nunc rutrum ornare. Nullam congue
+        ullamcorper interdum. In vel ante vel lorem iaculis condimentum.
+        Nam scelerisque nisi vel urna dictum pharetra. Maecenas sodales
+        diam quis augue vestibulum congue.
+      </div>
+    </div>
+
+
+
+
+
+
+
+
 
 
     <script src="lib/movingObject.js" charset="utf-8"></script>
@@ -16,14 +39,13 @@
     <script src="lib/keymaster.js"></script>
     <script>
       var canvasEl = document.getElementById("game-canvas");
-      canvasEl.width = window.innerWidth;
-      canvasEl.height = window.innerHeight;
+      canvasEl.width = 720;
+      canvasEl.height = 405;
       var ctx = canvasEl.getContext('2d');
       Asteroids = Asteroids || {};
       var game = new Asteroids.Game();
       var gameView = new Asteroids.GameView(game, ctx);
       gameView.start();
     </script>
-
   </body>
 </html>

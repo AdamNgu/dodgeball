@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+}
+
+.layout {
+  margin: 0 auto;
+  width: 50%;
+  color: white;
+  border: 1px solid white;
+}
+
+.name {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+  padding: 30px 30px 30px 30px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 20px;
+  font-weight: semibold;
+  letter-spacing: 2.5px;
+}
+
+.description {
+  padding: 20px 20px 20px 20px;
+  line-height: 20px;
+}
