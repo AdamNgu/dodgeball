@@ -4,9 +4,10 @@ body {
 
 .layout {
   margin: 0 auto;
-  width: 50%;
+  width: 720px;
   color: white;
   border: 1px solid white;
+  font-family: 'Arimo', sans-serif;
 }
 
 .name {
@@ -14,7 +15,6 @@ body {
   text-transform: uppercase;
   margin: 0 auto;
   padding: 30px 30px 30px 30px;
-  font-family: 'Arimo', sans-serif;
   font-size: 20px;
   font-weight: semibold;
   letter-spacing: 2.5px;
