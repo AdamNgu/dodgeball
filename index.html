@@ -26,8 +26,11 @@
     <script src="lib/keymaster.js"></script>
     <script>
       var canvasEl = document.getElementById("game-canvas");
-      canvasEl.width = 720;
-      canvasEl.height = 405;
+      canvasEl.width = 1440;
+      canvasEl.height = 810;
+      canvasEl.style.width = "720px";
+      canvasEl.style.height = "405px";
+      canvasEl.getContext('2d').scale(2,2)
       var ctx = canvasEl.getContext('2d');
       Dodgeballs = Dodgeballs || {};
       var game = new Dodgeballs.Game();
