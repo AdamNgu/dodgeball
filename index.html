@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
-  </head>
-  <body>
-    <div class="layout">
-      <div class="name">
-        Dodgeball
-      </div>
-      <canvas id="game-canvas"></canvas>
-      <div class="description">
-        Relive the terrifying days of middle school. Use the arrow keys to dodge incoming
-        balls: last as long as you can, and good luck with the controls!
-      </div>
+
+<head>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+</head>
+
+<body>
+  <div class="layout">
+    <div class="name">
+      Dodgeball
     </div>
+    <canvas id="game-canvas"></canvas>
+    <div class="description">
+      Relive the terrifying days of middle school. Use the arrow keys to dodge incoming balls: last as long as you can, and good luck with the controls!
+    </div>
+  </div>
 
 
-    <script src="lib/movingObject.js" charset="utf-8"></script>
-    <script src="lib/utils.js" charset="utf-8"></script>
-    <script src="lib/player.js" charset="utf-8"></script>
-    <script src="lib/dodgeball.js" charset="utf-8"></script>
-    <script src="lib/game.js" charset="utf-8"></script>
-    <script src="lib/gameView.js" charset="utf-8"></script>
-    <script src="lib/keymaster.js"></script>
-    <script>
-      var canvasEl = document.getElementById("game-canvas");
-      canvasEl.width = 1440;
-      canvasEl.height = 810;
-      canvasEl.style.width = "720px";
-      canvasEl.style.height = "405px";
-      canvasEl.getContext('2d').scale(2,2)
-      var ctx = canvasEl.getContext('2d');
-      Dodgeballs = Dodgeballs || {};
-      var game = new Dodgeballs.Game();
-      var gameView = new Dodgeballs.GameView(game, ctx);
-      gameView.start();
-    </script>
-  </body>
+  <script src="lib/movingObject.js" charset="utf-8"></script>
+  <script src="lib/utils.js" charset="utf-8"></script>
+  <script src="lib/player.js" charset="utf-8"></script>
+  <script src="lib/dodgeball.js" charset="utf-8"></script>
+  <script src="lib/game.js" charset="utf-8"></script>
+  <script src="lib/gameView.js" charset="utf-8"></script>
+  <script src="lib/keymaster.js"></script>
+  <script>
+    var canvasElement = document.getElementById("game-canvas");
+    var canvasContext = canvasElement.getContext('2d');
+
+    // Auto-scaling for high resolution displays
+    canvasElement.width = 1440;
+    canvasElement.height = 810;
+    canvasElement.style.width = "720px";
+    canvasElement.style.height = "405px";
+    var pixelRatio = window.devicePixelRatio;
+    canvasContext.scale(pixelRatio, pixelRatio)
+
+    Dodgeballs = Dodgeballs || {};
+    var game = new Dodgeballs.Game();
+    var gameView = new Dodgeballs.GameView(game, canvasContext);
+    gameView.start();
+  </script>
+</body>
+
 </html>
